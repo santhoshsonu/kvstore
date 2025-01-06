@@ -64,3 +64,10 @@ Once running, you can interact with the store using HTTP requests:
   ```bash
   curl -X DELETE "localhost:8080/v1/key/hello"
   ```
+
+### Future Improvements
+
+- There aren’t any tests.
+- There’s no Close method to gracefully close the transaction log file.
+- The service can close with events still in the write buffer: events can get lost.
+- The log retains records of deleted values forever: it will grow indefinitely.
